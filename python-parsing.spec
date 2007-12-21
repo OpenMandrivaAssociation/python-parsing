@@ -11,6 +11,7 @@ License:        MIT
 URL:            http://pyparsing.sourceforge.net/
 Source0:        http://prdownloads.sourceforge.net/pyparsing/py%{modname}-%{version}.tar.bz2
 Source1:        pyparsing-LICENSE
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
 
 BuildRequires:  python-devel
