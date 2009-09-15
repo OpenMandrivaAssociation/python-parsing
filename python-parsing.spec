@@ -3,7 +3,7 @@
 
 Name:           python-%{modname}
 Version:        1.4.2
-Release:        %mkrel 7
+Release:        %mkrel 8
 Summary:        An object-oriented approach to text processing
 
 Group:          Development/Python
