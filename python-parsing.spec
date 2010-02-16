@@ -1,46 +1,42 @@
-%define modname parsing
-%define pyver %(python -V 2>&1 | cut -f2 -d" " | cut -f1,2 -d".")
+%define module	parsing
+%define name	python-%{module}
+%define version	1.5.2
+%define release	%mkrel 1
 
-Name:           python-%{modname}
-Version:        1.4.2
-Release:        %mkrel 8
 Summary:        An object-oriented approach to text processing
-
+Name:           %{name}
+Version:        %{version}
+Release:        %{release}
 Group:          Development/Python
 License:        MIT
-URL:            http://pyparsing.sourceforge.net/
-Source0:        http://prdownloads.sourceforge.net/pyparsing/py%{modname}-%{version}.tar.bz2
-Source1:        pyparsing-LICENSE
+URL:            http://pyparsing.wikispaces.com/
+Source0:        http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
-
-BuildRequires:  python-devel
-Provides:	py%{modname}
+%py_requires -d
 
 %description
-pyparsing is a module that can be used to easily and directly configure syntax
-definitions for any number of text parsing applications.
+The pyparsing module provides an alternative approach to creating and
+executing simple grammars in Python versus the traditional lex/yacc
+approach or the use of regular expressions. It provides a library of
+classes that client code can use to construct a grammar directly.
 
 %prep
-%setup -q -n py%{modname}-%{version}
+%setup -q -n py%{module}-%{version}
 
 %build
 %{__python} setup.py build
 mv pyparsingClassDiagram.PNG pyparsingClassDiagram.png
-install -p -m 0644 %{SOURCE1} $RPM_BUILD_DIR/py%{modname}-%{version}/LICENSE
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
+%__rm -rf %{buildroot}
+%{__python} setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%__rm -rf %{buildroot}
 
-%files
+%files -f FILE_LIST
 %defattr(-,root,root,-)
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
-%{python_sitelib}/pyparsing.py
-%{python_sitelib}/pyparsing.py[co]
-%{python_sitelib}/*.egg-info
 
 
