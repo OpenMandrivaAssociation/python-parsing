@@ -1,7 +1,7 @@
 %define module	parsing
 %define name	python-%{module}
 %define version	1.5.2
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Summary:        An object-oriented approach to text processing
 Name:           %{name}
@@ -26,11 +26,15 @@ classes that client code can use to construct a grammar directly.
 
 %build
 %{__python} setup.py build
-mv pyparsingClassDiagram.PNG pyparsingClassDiagram.png
+
+install -m 644 pyparsingClassDiagram.PNG pyparsingClassDiagram.png
 
 %install
 %__rm -rf %{buildroot}
 %{__python} setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
+
+# fix permissions
+chmod 0644 examples/* htmldoc/* 
 
 %clean
 %__rm -rf %{buildroot}
@@ -38,5 +42,3 @@ mv pyparsingClassDiagram.PNG pyparsingClassDiagram.png
 %files -f FILE_LIST
 %defattr(-,root,root,-)
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
-
-
