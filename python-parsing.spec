@@ -13,7 +13,7 @@ URL:            http://pyparsing.wikispaces.com/
 Source0:        http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
-%py_requires -d
+BuildRequires:	python
 
 %description
 The pyparsing module provides an alternative approach to creating and
@@ -39,6 +39,7 @@ chmod 0644 examples/* htmldoc/*
 %clean
 %__rm -rf %{buildroot}
 
-%files -f FILE_LIST
+%files
 %defattr(-,root,root,-)
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
+%py_puresitedir/*
