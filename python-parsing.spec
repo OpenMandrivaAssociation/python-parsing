@@ -1,7 +1,7 @@
 %define module	parsing
 %define name	python-%{module}
 %define version	1.5.2
-%define release	%mkrel 2
+%define release	%mkrel 3
 
 Summary:        An object-oriented approach to text processing
 Name:           %{name}
@@ -40,6 +40,6 @@ chmod 0644 examples/* htmldoc/*
 %__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
+%defattr(-,root,root)
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
 %py_puresitedir/*
