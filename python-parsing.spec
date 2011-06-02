@@ -13,7 +13,7 @@ URL:            http://pyparsing.wikispaces.com/
 Source0:        http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:      noarch
-BuildRequires:	python
+BuildRequires:	python-devel
 
 %description
 The pyparsing module provides an alternative approach to creating and
