@@ -1,18 +1,17 @@
 %define module	parsing
 %define name	python-%{module}
-%define version	1.5.2
-%define release	%mkrel 3
+%define version	1.5.6
+%define release	%mkrel 1
 
-Summary:        An object-oriented approach to text processing
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Group:          Development/Python
-License:        MIT
-URL:            http://pyparsing.wikispaces.com/
-Source0:        http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArch:      noarch
+Summary:	An object-oriented approach to text processing
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Group:		Development/Python
+License:	MIT
+URL:		http://pyparsing.wikispaces.com/
+Source0:	http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
+BuildArch:	noarch
 BuildRequires:	python-devel
 
 %description
@@ -36,10 +35,6 @@ install -m 644 pyparsingClassDiagram.PNG pyparsingClassDiagram.png
 # fix permissions
 chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDiagram.png README LICENSE
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
 %py_puresitedir/*
