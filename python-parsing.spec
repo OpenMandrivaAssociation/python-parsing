@@ -4,15 +4,15 @@
 %define release	%mkrel 1
 
 Summary:	An object-oriented approach to text processing
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		python-%{module}
+Version:	1.5.6
+Release:	1
 Group:		Development/Python
 License:	MIT
-URL:		http://pyparsing.wikispaces.com/
+Url:		http://pyparsing.wikispaces.com/
 Source0:	http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
 BuildArch:	noarch
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig(python)
 
 %description
 The pyparsing module provides an alternative approach to creating and
@@ -21,7 +21,7 @@ approach or the use of regular expressions. It provides a library of
 classes that client code can use to construct a grammar directly.
 
 %prep
-%setup -q -n py%{module}-%{version}
+%setup -qn py%{module}-%{version}
 
 %build
 %{__python} setup.py build
@@ -29,7 +29,6 @@ classes that client code can use to construct a grammar directly.
 install -m 644 pyparsingClassDiagram.PNG pyparsingClassDiagram.png
 
 %install
-%__rm -rf %{buildroot}
 %{__python} setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
 
 # fix permissions
@@ -37,4 +36,5 @@ chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDia
 
 %files
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
-%py_puresitedir/*
+%{py_puresitedir}/*
+
