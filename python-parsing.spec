@@ -1,12 +1,12 @@
 %define module	parsing
 %define name	python-%{module}
 %define version	1.5.6
-%define release	4
+%define release	5
 
 Summary:	An object-oriented approach to text processing
 Name:		python-%{module}
 Version:	1.5.6
-Release:	4
+Release:	5
 Group:		Development/Python
 License:	MIT
 Url:		http://pyparsing.wikispaces.com/
