@@ -1,16 +1,13 @@
 %define module	parsing
-%define name	python-%{module}
-%define version	1.5.6
-%define release	5
 
 Summary:	An object-oriented approach to text processing
 Name:		python-%{module}
-Version:	1.5.6
-Release:	5
+Version:	2.0.1
+Release:	1
 Group:		Development/Python
 License:	MIT
 Url:		http://pyparsing.wikispaces.com/
-Source0:	http://prdownloads.sourceforge.net/py%{module}/py%{module}-%{version}.zip
+Source0:	http://sourceforge.net/projects/pyparsing/files/pyparsing/pyparsing-2.0.1/pyparsing-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 
@@ -24,12 +21,12 @@ classes that client code can use to construct a grammar directly.
 %setup -qn py%{module}-%{version}
 
 %build
-%{__python} setup.py build
+python setup.py build
 
 install -m 644 pyparsingClassDiagram.PNG pyparsingClassDiagram.png
 
 %install
-%{__python} setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
+python setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
 
 # fix permissions
 chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDiagram.png README LICENSE
@@ -37,4 +34,5 @@ chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDia
 %files
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
 %{py_puresitedir}/*
+
 
