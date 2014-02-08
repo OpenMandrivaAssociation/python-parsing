@@ -1,7 +1,7 @@
 %define module	parsing
 %define name	python-%{module}
 %define version	1.5.6
-%define release	%mkrel 1
+%define release	2
 
 Summary:	An object-oriented approach to text processing
 Name:		%{name}
