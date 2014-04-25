@@ -1,13 +1,14 @@
 %define module	parsing
 
 Summary:	An object-oriented approach to text processing
+
 Name:		python-%{module}
-Version:	2.0.1
+Version:	2.0.2
 Release:	1
 Group:		Development/Python
 License:	MIT
 Url:		http://pyparsing.wikispaces.com/
-Source0:	http://sourceforge.net/projects/pyparsing/files/pyparsing/pyparsing-2.0.1/pyparsing-%{version}.tar.gz
+Source0:	http://sourceforge.net/projects/pyparsing/files/pyparsing/pyparsing-2.0.2/pyparsing-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 
@@ -34,5 +35,6 @@ chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDia
 %files
 %doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
 %{py_puresitedir}/*
+
 
 

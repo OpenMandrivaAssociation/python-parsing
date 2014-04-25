@@ -1,4 +1,5 @@
 removed_sources:
   pyparsing-1.5.6.zip: 8115d43b5a6dc91f9fdb2ee6975141158bea68ab
-sources:
   pyparsing-2.0.1.tar.gz: b645857008881d70599e89c66e4bbc596fe22043
+sources:
+  pyparsing-2.0.2.tar.gz: 882b9ad439c600b0412ec0f1c806a5f3b9d4f4c7
