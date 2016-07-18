@@ -3,14 +3,17 @@
 Summary:	An object-oriented approach to text processing
 
 Name:		python-%{module}
-Version:	2.0.3
-Release:	4
+Version:	2.1.5
+Release:	1
 Group:		Development/Python
 License:	MIT
 Url:		http://pyparsing.wikispaces.com/
 Source0:	http://sourceforge.net/projects/pyparsing/files/pyparsing/pyparsing-2.0.3/pyparsing-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python2)
+BuildRequires:	python2-setuptools
+BuildRequires:	python-setuptools
 
 %description
 The pyparsing module provides an alternative approach to creating and
