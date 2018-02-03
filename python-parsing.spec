@@ -4,7 +4,7 @@ Summary:	An object-oriented approach to text processing
 
 Name:		python-%{module}
 Version:	2.2.0
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	MIT
 Url:		http://pyparsing.wikispaces.com/
