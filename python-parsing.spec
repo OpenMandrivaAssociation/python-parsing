@@ -4,7 +4,7 @@ Summary:	An object-oriented approach to text processing
 
 Name:		python-%{module}
 Version:	2.2.0
-Release:	3
+Release:	4
 Group:		Development/Python
 License:	MIT
 Url:		http://pyparsing.wikispaces.com/
@@ -58,9 +58,7 @@ python setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
 chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDiagram.png README LICENSE
 
 %files
-%doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
 %{py_puresitedir}/*
 
 %files -n python2-parsing
-%doc CHANGES examples HowToUsePyparsing.html htmldoc pyparsingClassDiagram.png README LICENSE
 %{py2_puresitedir}/*
