@@ -45,17 +45,12 @@ python2 setup.py build
 cd ..
 python setup.py build
 
-install -m 644 pyparsingClassDiagram.PNG pyparsingClassDiagram.png
-
 %install
 cd PY2
 python2 setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST2
 
 cd ..
 python setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
-
-# fix permissions
-chmod 0644 examples/* htmldoc/* CHANGES HowToUsePyparsing.html pyparsingClassDiagram.png README LICENSE
 
 %files
 %{py_puresitedir}/*
