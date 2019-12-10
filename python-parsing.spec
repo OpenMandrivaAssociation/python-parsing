@@ -3,12 +3,12 @@
 Summary:	An object-oriented approach to text processing
 
 Name:		python-%{module}
-Version:	2.4.0
+Version:	2.4.5
 Release:	1
 Group:		Development/Python
 License:	MIT
-Url:		http://pyparsing.wikispaces.com/
-Source0:	https://sourceforge.net/projects/pyparsing/files/pyparsing/pyparsing-%{version}/pyparsing-%{version}.tar.gz
+Url:		https://github.com/pyparsing/pyparsing
+Source0:	https://github.com/pyparsing/pyparsing/archive/pyparsing_%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(python2)
@@ -33,7 +33,7 @@ approach or the use of regular expressions. It provides a library of
 classes that client code can use to construct a grammar directly.
 
 %prep
-%setup -qn py%{module}-%{version}
+%setup -qn py%{module}-py%{module}_%{version}
 
 mkdir PY2
 cp -a `ls |grep -v PY2` PY2/
