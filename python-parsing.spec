@@ -3,7 +3,7 @@
 Summary:	An object-oriented approach to text processing
 
 Name:		python-%{module}
-Version:	2.4.5
+Version:	2.4.6
 Release:	1
 Group:		Development/Python
 License:	MIT
