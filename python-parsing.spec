@@ -3,7 +3,7 @@
 Summary:	An object-oriented approach to text processing
 
 Name:		python-%{module}
-Version:	3.0.7
+Version:	3.0.9
 Release:	1
 Group:		Development/Python
 License:	MIT
@@ -11,7 +11,9 @@ Url:		https://github.com/pyparsing/pyparsing
 Source0:	https://github.com/pyparsing/pyparsing/archive/pyparsing_%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	python-setuptools
+BuildRequires:	python-pip
+BuildRequires:	python%{pyver}dist(flit-core)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 The pyparsing module provides an alternative approach to creating and
@@ -23,10 +25,11 @@ classes that client code can use to construct a grammar directly.
 %autosetup -p1 -n py%{module}-py%{module}_%{version}
 
 %build
-python setup.py build
+mkdir wheels
+pip wheel --wheel-dir wheels --no-deps --no-build-isolation --verbose .
 
 %install
-python setup.py install -O1 --skip-build --root=%{buildroot} --record=FILE_LIST
+pip install --root=%{buildroot} --no-deps --verbose --ignore-installed --no-warn-script-location --no-index --no-cache-dir --find-links wheels wheels/*.whl
 
 %files
 %{py_puresitedir}/*
