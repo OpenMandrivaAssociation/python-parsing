@@ -1,16 +1,16 @@
 %define module parsing
 
+Name:		python-parsing
 Summary:	An object-oriented approach to text processing
-
-Name:		python-%{module}
-Version:	3.2.5
+Version:	3.3.2
 Release:	1
 Group:		Development/Python
 License:	MIT
 Url:		https://github.com/pyparsing/pyparsing
-Source0:	https://github.com/pyparsing/pyparsing/releases/download/%{version}/pyparsing-%{version}.tar.gz
-BuildArch:	noarch
+Source0:	%{URL}/archive/%{version}/%{name}-%{version}.tar.gz
+
 BuildSystem:	python
+BuildArch:	noarch
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(flit-core)
 BuildRequires:	python%{pyver}dist(wheel)
@@ -22,4 +22,5 @@ approach or the use of regular expressions. It provides a library of
 classes that client code can use to construct a grammar directly.
 
 %files
-%{py_puresitedir}/*
+%{py_puresitedir}/py%{module}
+%{py_puresitedir}/py%{module}-%{version}.dist-info
