@@ -3,7 +3,7 @@
 Name:		python-parsing
 Summary:	An object-oriented approach to text processing
 Version:	3.3.2
-Release:	1
+Release:	2
 Group:		Development/Python
 License:	MIT
 Url:		https://github.com/pyparsing/pyparsing
